@@ -25,7 +25,6 @@ public:
 	VectorXd JointVelocity(VectorXd dj, VectorXd dj_);
 	VectorXd CartesianVelocity(VectorXd vj, MatrixXd Jacobian_geometry);
 	VectorXd OrientationError_matrix(MatrixXd desiredPose, MatrixXd currentPose);
-	Vector3d OrientationError_quaternion(const Quaterniond &orientation_d, Quaterniond orientation);
 	VectorXd PosiError(MatrixXd desiredPose, MatrixXd currentPose);
 	VectorXd VelError(VectorXd desiredVel, VectorXd currentVel);
 	double degree2Radian = M_PI / 180.f;
