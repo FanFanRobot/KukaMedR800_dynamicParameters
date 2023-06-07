@@ -60,7 +60,7 @@ MatrixXd Kinematic::Geometry_Jacobian_DH(VectorXd angles)
 	J7.block<3, 1>(0, 4) = v5; J7.block<3, 1>(3, 4) = z5;
 	J7.block<3, 1>(0, 5) = v6; J7.block<3, 1>(3, 5) = z6;
 	J7.block<3, 1>(0, 6) = v7; J7.block<3, 1>(3, 6) = z7;
-	//cout << "ÑÅ¿Ë±È: " << endl << J7 << endl;
+	//cout << "é›…å…‹æ¯”: " << endl << J7 << endl;
 	return J7;
 }
 MatrixXd Kinematic::PseudoInverse_JacobianGeometry(MatrixXd JacobianGeometry)
@@ -422,22 +422,7 @@ VectorXd Kinematic::OrientationError_matrix(MatrixXd desiredPose, MatrixXd curre
 	Vector3d oriErrVec(0.5f*(oriError(2, 1) - oriError(1, 2)), 0.5f*(oriError(0, 2) - oriError(2, 0)), 0.5f*(oriError(1, 0) - oriError(0, 1)));
 	return oriErrVec;
 }
-/*
-Õâ¸öÐý×ª±íÊ¾µÄ·½Ê½¿ÉÄÜ»¹ÓÐ´íÎó»òÕßÎÊÌâ£¬´ý¶¨
-*/
-Vector3d Kinematic::OrientationError_quaternion(const Quaterniond &orientation_d, Quaterniond orientation)
-{
-	// Orientation error
-	if (orientation_d.coeffs().dot(orientation.coeffs()) < 0.0)
-	{
-		orientation.coeffs() << -orientation.coeffs();
-	}
-	// "difference" quaternion
-	const Quaterniond error_quaternion(orientation * orientation_d.inverse());
-	// convert to axis angle
-	AngleAxisd error_quaternion_angle_axis(error_quaternion);
-	return error_quaternion_angle_axis.axis() * error_quaternion_angle_axis.angle();
-}
+
 /*
 Cartesian Position error. (6*1 vector)
 Param 1:desiredPose,
