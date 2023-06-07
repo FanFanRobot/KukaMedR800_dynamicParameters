@@ -18,9 +18,6 @@ public:
 	~DynamicModel();
 	MatrixXd InertiaMatrix_BaseParameters(VectorXd joints);
 	MatrixXd InertiaWeightedPseudoInverse_JacobianGeometry(MatrixXd JacobianGeometry, MatrixXd Inertia);
-	MatrixXd TorqueInput_CartImpCtr(MatrixXd RobotInertia, MatrixXd Jacobian_geometry, MatrixXd DesiredInertia, MatrixXd DesiredDamping,
-		MatrixXd DesiredStiffness, VectorXd PosiError, VectorXd VelError, VectorXd DesiredAcceleration, VectorXd JointVel,
-		MatrixXd JacobianTimeDerivative, VectorXd ExternalTorque);
 	VectorXd Corriolis_Gravity_Friction(VectorXd joints, VectorXd jointsVelocity);
 	//base parameters
 
