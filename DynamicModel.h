@@ -23,18 +23,6 @@ public:
 		MatrixXd JacobianTimeDerivative, VectorXd ExternalTorque);
 	VectorXd Corriolis_Gravity_Friction(VectorXd joints, VectorXd jointsVelocity);
 	//base parameters
-	/*float Beta1 = -0.0067;	float Beta2 = 0.0162;	float Beta3 = 0.1120;	float Beta4 = -0.0087;	float Beta5 = -0.0290;
-	float Beta6 = -0.0293;	float Beta7 = 0.0347;	float Beta8 = -0.0752;	float Beta9 = 0.0174;	float Beta10 = 2.2727;
-	float Beta11 = 0.1030;	float Beta12 = 0.0607;	float Beta14 = 0.0683;	float Beta15 = -0.0102;
-	float Beta16 = 0.0017;	float Beta17 = 0.0750;	float Beta18 = -0.0755;	float Beta19 = 5.3006;
-	float Beta20 = -0.0774;	float Beta21 = -0.1131;	float Beta22 = 0.0130;	float Beta23 = -0.0196;
-	float Beta24 = -0.1257;	float Beta25 = -0.0983;	float Beta26 = -0.3054;	float Beta27 = 0.0024;
-	float Beta28 = -0.0444;	float Beta29 = 0.0515;	float Beta30 = -0.1883;	float Beta31 = 0.2613;
-	float Beta32 = -0.6335;	float Beta33 = -0.1422;	float Beta34 = -3.3371;	float Beta35 = 0.1863;
-	float Beta36 = -0.2049;	float Beta37 = -3.6697;	float Beta38 = 0.5255;	float Beta39 = -0.0453;
-	float Beta40 = -8.0307;	float Beta41 = -9.1112;	float Beta49 = -0.0440;	float Beta50 = 0.1686;
-	float Beta51 = -0.0417;	float Beta52 = 0.1769;	float Beta53 = 1.5370;	float Beta54 = -0.1354;
-	float Beta55 = 1.5769;*/
 
 	float Beta1 = 0.0035;	float Beta2 = 0.0007;	float Beta3 = 0.1094;	float Beta4 = -0.0433;	float Beta5 = -0.0252;
 	float Beta6 = 0.0093;	float Beta7 = -0.0269;	float Beta8 = -0.0542;	float Beta9 = 0.0109;	float Beta10 = 2.2794;
