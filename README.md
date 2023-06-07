@@ -1,6 +1,6 @@
 # KukaMedR800_dynamicParameters
 The dynamic base parameters of KUKA Med R800, Kinematic and dynamic library.
-For more details, please refer the paper "Dynamic Parameter Identification of the Kuka LBR Med Robot" with with Author Fanny Ficuciello, Fan Shao. This paper will be available online after September this year.
+For more details, please refer the paper "Dynamic Parameter Identification of the Kuka LBR Med Robot" with with Author Fanny Ficuciello, Fan Shao. This paper will be available online after September 2023.
 
 # Contents
 We publish the base dynamic parameters of Kuka Med R800. There are two useful classes, Kinematic and DynamicModel. 
