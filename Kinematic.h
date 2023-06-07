@@ -38,18 +38,18 @@ public:
 
 	/*% Kinematics 	theta[rad] 	d[m]     a[m]      alpha[rad]
 	% Joint 1       q1      0.34       0        	0
-	% Joint 2       q2      0          0       - Π / 2
-	% Joint 3       q3      0.4 	   0         Π / 2
-	% Joint 4       q4      0          0 	     Π / 2
-	% Joint 5       q5      0.4        0       - Π / 2
-	% Joint 6       q6      0          0       - Π / 2
-	% Joint 7       q7      0.126      0         Π / 2   */
+	% Joint 2       q2      0          0       - 螤 / 2
+	% Joint 3       q3      0.4 	   0         螤 / 2
+	% Joint 4       q4      0          0 	     螤 / 2
+	% Joint 5       q5      0.4        0       - 螤 / 2
+	% Joint 6       q6      0          0       - 螤 / 2
+	% Joint 7       q7      0.126      0         螤 / 2   */
 	double UpperJointLimit[7] = { 170 * degree2Radian,120 * degree2Radian ,170 * degree2Radian ,120 * degree2Radian ,170 * degree2Radian
 	,120 * degree2Radian ,175 * degree2Radian };
 	double LowerJointLimit[7]= { -170 * degree2Radian,-120 * degree2Radian ,-170 * degree2Radian ,-120 * degree2Radian ,-170 * degree2Radian
 		,-120 * degree2Radian ,-175 * degree2Radian };
 private:
-	//采样频率=FRI的通信周期
+	//the sampling time of FRI, usually is 2ms
 	double samplingPeriod = 0.002;
 
 };
