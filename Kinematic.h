@@ -49,7 +49,7 @@ public:
 	double LowerJointLimit[7]= { -170 * degree2Radian,-120 * degree2Radian ,-170 * degree2Radian ,-120 * degree2Radian ,-170 * degree2Radian
 		,-120 * degree2Radian ,-175 * degree2Radian };
 private:
-	//the sampling time of FRI, usually is 2ms
+	//the sampling time defined in the Sunrise application of FRI, usually is 2ms
 	double samplingPeriod = 0.002;
 
 };
