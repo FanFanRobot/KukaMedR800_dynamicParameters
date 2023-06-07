@@ -14,6 +14,6 @@ In Kinematic, there are functions about
 6) the Cartesian velocity, function name "CartesianVelocity";
 7) the orientation error between current orientation matrix and desired orientation matrix, the orientation are described by matrix, function name "OrientationError_matrix".
 In DynamicModel, the base parameters of Kuka Med R800 can be found in DynamicModel.h, there are fuctions about
-1) Inertia Matrix of Kuka Med R800, function name "InertiaMatrix_BaseParameters";
-2) the Corriolis, Gravity and Friction terms, function name "Corriolis_Gravity_Friction".
+1. Inertia Matrix of Kuka Med R800, function name "InertiaMatrix_BaseParameters";
+2. the Corriolis, Gravity and Friction terms, function name "Corriolis_Gravity_Friction".
 
