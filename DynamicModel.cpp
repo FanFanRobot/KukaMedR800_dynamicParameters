@@ -4902,48 +4902,7 @@ MatrixXd DynamicModel::InertiaWeightedPseudoInverse_JacobianGeometry(MatrixXd Ja
 	//test-e
 	return jaInverse;
 }
-/*
-The joint torque command for the Cartesian space impedance control, but without the compensation of the gravity and coriolis (KUKA controller will
-compensate them). Details please see "B. Siciliano, L. Sciavicco, L. Villani, and G. Oriolo, Robotics: Modelling, Planning and Control" and "Evaluation of Human-Robot Object Co-manipulation Under Robot Impedance Control"
-Param 1: RobotInertia,
-the robot inertia matrix (7*7),
-Param 2: Jacobian_geometry,
-the geometric jacobian,
-Param 3: DesiredInertia,
-user defined desired inertia matrix (6*6),
-Param 4: DesiredDamping,
-user defined desired damping matrix (6*6),
-Param 5: DesiredStiffness,
-user defined desired stiffness matrix (6*6),
-Param 6: PosiError,
-position error between the desired Cartesian position and the current position (6*1),
-Param 7: VelError,
-velocity error between the desired Cartesian velocity and the current velocity (6*1),
-Param 8: DesiredAcceleration,
-the desired Cartesian acceleration (6*1),
-Param 9: JointVel,
-the joint velocity (7*1),
-Param 10: JacobianTimeDerivative,
-the time derivative of the jacobian (6*7),
-Param 11: ExternalTorque,
-the external torque (7*1)
-*/
-MatrixXd DynamicModel::TorqueInput_CartImpCtr(MatrixXd RobotInertia, MatrixXd Jacobian_geometry, MatrixXd DesiredInertia, MatrixXd DesiredDamping,
-	MatrixXd DesiredStiffness, VectorXd PosiError, VectorXd VelError, VectorXd DesiredAcceleration, VectorXd JointVel,
-	MatrixXd JacobianTimeDerivative, VectorXd ExternalTorque)
-{
-	MatrixXd pseudoInverse_Jacobian(7, 6);
-	pseudoInverse_Jacobian = InertiaWeightedPseudoInverse_JacobianGeometry(Jacobian_geometry, RobotInertia);
-	MatrixXd y(7, 1);
-	y = pseudoInverse_Jacobian*(DesiredInertia.inverse())* (
-		DesiredInertia*DesiredAcceleration + DesiredDamping*VelError +
-		DesiredStiffness*PosiError - DesiredInertia*JacobianTimeDerivative*JointVel -
-		(pseudoInverse_Jacobian.transpose())*ExternalTorque
-		);
-	MatrixXd torqueInput(7, 1);
-	torqueInput = RobotInertia*y + ExternalTorque;
-	return torqueInput;
-}
+
 DynamicModel::~DynamicModel()
 {
 }
